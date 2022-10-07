@@ -15,8 +15,9 @@ WHERE  hire_date BETWEEN (SELECT hire_date
        AND employee_id IN (SELECT salesman_id
                            FROM   orders
                            WHERE  salesman_id IS NOT NULL)
+       AND employee_id <> 57
 ORDER  BY hire_date,
-          employee_id;
+          employee_id; 
 
 
 
@@ -31,11 +32,13 @@ FROM   customers c
 WHERE  o.order_date = ANY (SELECT order_date
                            FROM   orders
                            WHERE  customer_id = 2)
+       AND c.customer_id <> 2
 GROUP  BY c.customer_id,
           c.name,
           o.order_date
 ORDER  BY o.order_date,
-          c.customer_id;
+          c.customer_id; 
+          
           
           
 --  QUESTION 3 -- 
