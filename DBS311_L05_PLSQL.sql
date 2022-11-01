@@ -275,11 +275,3 @@ BEGIN
     dbms_output.PUT_LINE ('The number of customers with low credit limit: '
                           || low_count);
 END; 
-
-
-
-
-
-
-
-
